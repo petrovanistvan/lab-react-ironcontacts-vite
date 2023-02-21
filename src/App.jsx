@@ -28,12 +28,22 @@ function App() {
     }
   }
 
+  function sortByPopularity(){
+    actors.sort(function(a, b){return b.popularity - a.popularity});
+    setCount(count + 1);
+  }
+
+  function sortByName() {
+    actors.sort((a,b) => a.name.localeCompare(b.name));
+    setCount(count + 1);
+  }
+
   return (
     <div className="App">
         <h1>Ironcontacts</h1>
-        <button className="add" onClick={returnRandomActor}>Add Random Contact</button>
-        <button className="sortByPopularity">Sort by popularity</button>
-        <button className="sortByName">Sort by name</button>
+        <button onClick={returnRandomActor}>Add Random Contact</button>
+        <button onClick={sortByPopularity}>Sort by popularity</button>
+        <button onClick={sortByName}>Sort by name</button>
         <table>
           <thead>
             <tr>

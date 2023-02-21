@@ -38,6 +38,15 @@ function App() {
     setCount(count + 1);
   }
 
+  const deleteActor = (actorId) => () => {
+        for (let i = 0; i < actors.length; i++) {
+          if (actors[i].id === actorId) {
+            actors.splice(i, 1);
+            setCount(count + 1);
+          }
+        }
+  }
+
   return (
     <div className="App">
         <h1>Ironcontacts</h1>
@@ -66,7 +75,7 @@ function App() {
               <td>{Math.round(actor.popularity * 100) / 100}</td>
               <td>{actor.wonOscar?"🏆":""}</td>
               <td>{actor.wonEmmy?"🏆":""}</td>
-              <td><button>Delete</button></td>
+              <td><button onClick={deleteActor(actor.id)}>Delete</button></td>
             </tr>
 
           )}

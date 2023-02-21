@@ -17,6 +17,8 @@ function App() {
               <th>Picture</th>
               <th>Name</th>
               <th>Popularity</th>
+              <th>Won Oscar</th>
+              <th>Won Emmy</th>
             </tr>
           </thead>
           <tbody>
@@ -28,6 +30,8 @@ function App() {
               <td>{actor.name}</td>
 
               <td>{Math.round(actor.popularity * 100) / 100}</td>
+              <td>{actor.wonOscar?"🏆":""}</td>
+              <td>{actor.wonEmmy?"🏆":""}</td>
             </tr>
 
           )}
@@ -39,3 +43,5 @@ function App() {
 }
 
 export default App
+
+// 🏆
